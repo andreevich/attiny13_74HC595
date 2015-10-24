@@ -1,9 +1,14 @@
 # attiny13_74HC595
 Attiny13 И сдвиговый регистр 74HC595 и немножко Arduino Studio
+[![attiny13_74HC595](http://img.youtube.com/vi/aXcXXDBGOWQ/0.jpg)](https://www.youtube.com/watch?v=aXcXXDBGOWQ)
 
 ![Alt-screenshot](http://getchip.net/wp-content/uploads/012-ATTiny13-pinout.png "Screenshot")
 
 Что бы подружить Attiny13 и Arduino Studio нужно пройтись по ссылочке http://arduino.ru/forum/programmirovanie/attiny13a-101-primenenie?page=10 и скачать пару файлов. Файлики прикладываю, на всякий случай.
+
+
+![Alt-screenshot](https://github.com/andreevich/attiny13_74HC595/blob/master/2015-10-24_17-47-42.png "Screenshot")
+![Alt-screenshot](https://github.com/andreevich/attiny13_74HC595/blob/master/2015-10-24_17-43-25.png "Screenshot")
 
 ```C
 #include <avr/io.h>

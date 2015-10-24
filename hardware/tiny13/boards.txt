@@ -1,0 +1,113 @@
+
+###########################################################################
+#
+# Example boards.txt from...
+#
+# http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1236434254/94#94
+# http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1274754985/6#6
+# http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1274820597/49#49
+#
+###########################################################################
+
+###########################################################################
+# 128KHz is set from the internal watchdog oscillator and is easily selected.
+# 600KHz is the 4.8MHz clock with the /8 fuse set.
+# 1 MHz must be created with an external clock on the '13
+# 1.2MHz is the 9.6MHz clock with the /8 fuse set
+# 4 MHz must be created with an external clock on the '13
+# 4.8MHz is the 4.8MHz internal RC oscillator
+# 8MHz must be created with an external clock on the '13
+# 9.6 MHz is the 9.6MHz internal RC oscillatr
+# 10,12,16 MHz all need to be created with external clocks.
+#
+# 0x69 = 4.8MHz / 8 = 0.6MHz
+# 0x6a = 9.6MHz / 8 = 1.2MHz
+# 0x79 = 4.8MHz
+# 0x7a = 9.6MHz 
+#
+
+
+attiny13at9p6.name=ATtiny13 @ 9.6 Mhz (internal 9.6 MHz clock)
+
+attiny13at9p6.upload.tool=avrdude
+attiny13at9p6.upload.using=arduino:arduinoisp
+attiny13at9p6.upload.maximum_size=1024
+attiny13at9p6.upload.maximum_ram_size=64
+
+attiny13at9p6.bootloader.tool=avrdude
+attiny13at9p6.bootloader.low_fuses=0x7A
+attiny13at9p6.bootloader.high_fuses=0xff
+
+attiny13at9p6.build.mcu=attiny13
+attiny13at9p6.build.f_cpu=9600000L
+attiny13at9p6.build.core=core13
+
+###########################################################################
+
+attiny13at4p8.name=ATtiny13 @ 4.8 MHz (internal 4.8 MHz clock)
+
+attiny13at4p8.upload.tool=avrdude
+attiny13at4p8.upload.using=arduino:arduinoisp
+attiny13at4p8.upload.maximum_size=1024
+attiny13at4p8.upload.maximum_ram_size=64
+
+attiny13at4p8.bootloader.tool=arduino:avrdude
+attiny13at4p8.bootloader.low_fuses=0x79
+attiny13at4p8.bootloader.high_fuses=0xff
+
+attiny13at4p8.build.mcu=attiny13
+attiny13at4p8.build.f_cpu=4800000L
+attiny13at4p8.build.core=core13
+
+###########################################################################
+
+attiny13at9dm.name=ATtiny13 @ 1.2 MHz (internal 9.6 MHz clock/8) defalt
+
+attiny13at9dm.upload.tool=avrdude
+attiny13at9dm.upload.using=arduino:arduinoisp
+attiny13at9dm.upload.maximum_size=1024
+attiny13at9dm.upload.maximum_ram_size=64
+
+attiny13at9dm.bootloader.tool=arduino:avrdude
+attiny13at9dm.bootloader.low_fuses=0x6A
+attiny13at9dm.bootloader.high_fuses=0xff
+
+attiny13at9dm.build.mcu=attiny13
+attiny13at9dm.build.f_cpu=1200000L
+attiny13at9dm.build.core=core13
+
+###########################################################################
+
+attiny13at4p8d.name=ATtiny13 @ 600 KHz (internal 4.8 MHz clock/8)
+
+attiny13at4p8d.upload.tool=avrdude
+attiny13at4p8d.upload.using=arduino:arduinoisp
+attiny13at4p8d.upload.maximum_size=1024
+attiny13at4p8d.upload.maximum_ram_size=64
+
+attiny13at4p8d.bootloader.tool=arduino:avrdude
+attiny13at4p8d.bootloader.low_fuses=0x69
+attiny13at4p8d.bootloader.high_fuses=0xff
+
+attiny13at4p8d.build.mcu=attiny13
+attiny13at4p8d.build.f_cpu=600000L
+attiny13at4p8d.build.core=core13
+
+###########################################################################
+
+attiny13int.name=Attiny13 @ 128 KHz (internal 128 KHz watchdog oscillator - no KnockBang)
+
+attiny13int.upload.tool=avrdude
+attiny13int.upload.using=arduino:arduinoisp
+attiny13int.upload.maximum_size=1024
+attiny13int.upload.maximum_ram_size=64
+
+attiny13int.bootloader.tool=arduino:avrdude
+attiny13int.bootloader.low_fuses=0x7B
+attiny13int.bootloader.high_fuses=0xFF
+
+attiny13int.build.mcu=attiny13
+attiny13int.build.f_cpu=128000L
+attiny13int.build.core=core13
+
+###########################################################################
